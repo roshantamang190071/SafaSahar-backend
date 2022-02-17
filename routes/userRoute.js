@@ -53,7 +53,7 @@ router.post("/register/user", function (req, res) {
 
 //user login
 router.post("/login/user", function (req, res) {
-  const fullName = req.body.fullName;
+  const email = req.body.email;
   const password = req.body.password;
 
   // user validation
