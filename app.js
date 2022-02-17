@@ -7,6 +7,7 @@ require("./dbConnection/dbConnection");
 
 //import routes
 const user = require("./routes/userRoute");
+const admin = require("./routes/adminRoute");
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(user);
+app.use(admin);
 
 app.listen(3000, function (error) {
   if (error) {
