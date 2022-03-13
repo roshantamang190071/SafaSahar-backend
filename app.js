@@ -7,7 +7,7 @@ require("./dbConnection/dbConnection");
 
 //import routes
 const user = require("./routes/userRoute");
-const admin = require("./models/adminModel");
+const admin = require("./routes/adminRoute");
 
 const app = express();
 
