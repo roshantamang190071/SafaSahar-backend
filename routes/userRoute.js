@@ -20,7 +20,7 @@ router.put("/update/user", auth.verify_user, userController.update_user);
 router.put(
   "/user/profile-pic",
   auth.verify_user,
-  upload.single("file"),
+  upload.single("image"),
   userController.update_user_profile
 );
 

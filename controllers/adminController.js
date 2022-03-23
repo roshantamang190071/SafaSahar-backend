@@ -1,4 +1,5 @@
 const admin = require("../models/adminModel");
+const user = require("../models/userModel");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
@@ -123,4 +124,18 @@ module.exports.update_admin_profile = async function (req, res) {
     }
   );
   return res.json({ msg: "User Profile Picture Uploaded", success: true });
+};
+
+module.exports.user_details = async function (req, res) {
+  const _id = req.params.id;
+  await user
+    .findById(_id)
+    .then((data) => {
+      return res
+        .status(200)
+        .json({ success: true, msg: "Successfully fetched User Data", data });
+    })
+    .catch((err) => {
+      return res.status(500).json({ success: false, message: err });
+    });
 };

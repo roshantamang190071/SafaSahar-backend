@@ -17,6 +17,13 @@ router.get("/admin/:id", auth.verify_admin, adminController.admin_details);
 //update admin
 router.put("/update/admin", auth.verify_admin, adminController.update_admin);
 
+//user details
+router.get(
+  "/requestDetails/:id",
+  auth.verify_admin,
+  adminController.user_details
+);
+
 router.put(
   "/admin/profile-pic",
   auth.verify_admin,

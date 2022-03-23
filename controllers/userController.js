@@ -95,7 +95,6 @@ module.exports.update_user = async function (req, res) {
   const update = {
     $set: {
       fullName: req.body.fullName,
-      password: req.body.password,
       phoneNumber: req.body.phoneNumber,
     },
   };
@@ -110,7 +109,6 @@ module.exports.update_user = async function (req, res) {
 };
 
 module.exports.update_user_profile = async function (req, res) {
-  console.log(req.file);
   if (req.file == undefined) {
     return res.json({ msg: "only png/jpeg/gif files are allowed!" });
   }

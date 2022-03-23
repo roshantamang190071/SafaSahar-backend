@@ -8,6 +8,7 @@ require("./dbConnection/dbConnection");
 //import routes
 const user = require("./routes/userRoute");
 const admin = require("./routes/adminRoute");
+const location = require("./routes/locationRoute");
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(user);
 app.use(admin);
+app.use(location);
 
 app.listen(3000, function (error) {
   if (error) {
